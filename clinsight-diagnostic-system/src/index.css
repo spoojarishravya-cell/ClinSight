@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-navy-950: #071D35;
+  --color-navy-900: #0B2542;
+  --color-teal-500: #19B6B2;
+  --color-cyan-400: #55DDE0;
+  --color-canvas: #F4F7FB;
+  --color-stroke: #E2E8F0;
+  --color-critical: #DC2626;
+  --color-guarded: #F59E0B;
+  --color-stable: #0D9488;
+}
+
+@layer base {
+  html, body {
+    background-color: #F4F7FB;
+    color: #181C1F;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1, "cv05" 1;
+  }
+}
+
+.clinical-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(7, 29, 53, 0.04), 0 1px 2px -1px rgba(7, 29, 53, 0.02);
+}
+
+.clinical-card-active {
+  background-color: #FFFFFF;
+  border: 1px solid #19B6B2;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 16px -4px rgba(7, 29, 53, 0.08), 0 2px 4px -2px rgba(25, 182, 178, 0.06);
+}
+
+.clinical-overlay {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(7, 29, 53, 0.12), 0 8px 10px -6px rgba(7, 29, 53, 0.06);
+}
+
+.clinical-input {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 0.25rem;
+  transition: border-color 150ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.clinical-input:focus {
+  outline: none;
+  border-color: #19B6B2;
+  box-shadow: 0 0 0 3px rgba(85, 221, 224, 0.22);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
